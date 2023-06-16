@@ -8,9 +8,6 @@ export class AppController {
 
   @Post('/verify')
   verify(@Body() createVerifyDto: CreateVerifyDto) {
-    return this.appService.checkToken(
-      createVerifyDto.secret,
-      createVerifyDto.token,
-    );
+    return this.appService.checkToken(createVerifyDto.token);
   }
 }
